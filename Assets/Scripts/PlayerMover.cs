@@ -8,10 +8,12 @@ public class PlayerMover : MonoBehaviour
     private float horizontal;
 
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -36,5 +38,19 @@ public class PlayerMover : MonoBehaviour
         {
             animator.SetBool("isRunning", false);
         }
-    } 
+
+        if (horizontalPosition < 0)
+        {
+            flip(true);
+        }
+        else if (horizontalPosition > 0)
+        {
+            flip(false);
+        }
+    }
+
+    private void flip(bool isFliping)
+    {
+        spriteRenderer.flipX = isFliping;
+    }
 }

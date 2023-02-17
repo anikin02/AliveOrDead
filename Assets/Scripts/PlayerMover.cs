@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private FixedJoystick fixedJoystick;
     [SerializeField] private float moveSpeed = 0;
+
+    private FixedJoystick fixedJoystick;
     private float vertical;
     private float horizontal;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
-
+    
     private void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        fixedJoystick = GameObject.FindGameObjectWithTag("GameController").GetComponent<FixedJoystick>();
     }
 
     private void Update()

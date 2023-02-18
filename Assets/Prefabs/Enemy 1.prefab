@@ -118,6 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18861465ca0da784491f02c91d2a34da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  delay: 2
+  atackDamage: 10
 --- !u!114 &4593283391488181815
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,10 +16,12 @@ public class Player : MonoBehaviour
         if (health - damage > 0)
         {
             health -= damage;
+            print(health);
         }
         else
         {
             health = 0;
+            death();
         }
     }
 
@@ -33,5 +35,11 @@ public class Player : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    private void death()
+    {
+
+        Destroy(gameObject);
     }
 }

@@ -22,6 +22,11 @@ public class EnemyMover : MonoBehaviour
 
     private void move()
     {
+        if (!playerTransform)
+        {
+            return;
+        }
+
         transform.position = Vector2.MoveTowards(
             transform.position, playerTransform.position, moveSpeed * Time.deltaTime);
 

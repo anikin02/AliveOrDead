@@ -8,6 +8,7 @@ TagManager:
   - MoveController
   - RotationController
   - AttackController
+  - DeadEnemy
   layers:
   - Default
   - TransparentFX

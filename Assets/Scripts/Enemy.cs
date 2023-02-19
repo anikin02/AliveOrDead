@@ -14,6 +14,11 @@ public class Enemy : MonoBehaviour
     public void GetDamage(int damage)
     {
         health -= damage;
+
+        if (health <= 0)
+        {
+            death();
+        }
     }
 
     private IEnumerator attack(Player player)
@@ -56,6 +61,8 @@ public class Enemy : MonoBehaviour
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(GetComponent<EnemyMover>());
+        
+        gameObject.tag = "DeadEnemy";
 
         // new sprite
 

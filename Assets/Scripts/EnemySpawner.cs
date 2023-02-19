@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < countEnemies; i++)
         {
-            Vector2 position = new Vector2(Random.Range(-4.0f, 4.0f), Random.Range(-4.0f, 4.0f));
+            Vector2 position = new Vector2(Random.Range(-8.0f, 8.0f), Random.Range(3.0f, 8.0f));
             GameObject newGameObject = Instantiate(
                 enemies[Random.Range(0, enemies.Length)],
                 position,

@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float durationMultiplier = 0;
     [SerializeField] private float waveDuration = 10;
     private int wave = 0;
+    private float delayBetween = 5;
+    private bool isWave = false;
     private IEnumerator newWaveCoroutine;
 
     private void Start()
@@ -17,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if ((!isWave) && (GameObject.FindGameObjectsWithTag("Enemy").Length == 0))
         {
             StopCoroutine(newWaveCoroutine);
             StartCoroutine(newWaveCoroutine);
@@ -28,9 +30,12 @@ public class EnemySpawner : MonoBehaviour
     {
         while(true)
         {
+            isWave = true;
+            yield return new WaitForSeconds(delayBetween);
             wave++;
             waveDuration += wave * durationMultiplier;
             spawnEnemies(wave * enemyMultiplier);
+            isWave = false;
             yield return new WaitForSeconds(waveDuration);
         }
     }
@@ -39,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < countEnemies; i++)
         {
-            Vector2 position = new Vector2(Random.Range(-8.0f, 8.0f), Random.Range(3.0f, 8.0f));
+            Vector2 position = new Vector2(Random.Range(-15.0f, 15.0f), Random.Range(5.0f, 10.0f));
             GameObject newGameObject = Instantiate(
                 enemies[Random.Range(0, enemies.Length)],
                 position,

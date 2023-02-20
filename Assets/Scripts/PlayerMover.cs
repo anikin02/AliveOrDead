@@ -33,15 +33,22 @@ public class PlayerMover : MonoBehaviour
         var verticalPosition = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         var horizontalPosition = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
 
-        transform.Translate(horizontalPosition, verticalPosition, 0);
-
         if ((verticalPosition != 0) || (horizontalPosition != 0))
         {
             animator.SetBool("isRunning", true);
+
+            if (((transform.position.x + horizontalPosition) < 15) && ((transform.position.x + horizontalPosition) > -15))
+            {
+                transform.Translate(horizontalPosition, 0, 0); 
+            }
+            if (((transform.position.y + verticalPosition) < 10) && ((transform.position.y + verticalPosition) > -10))
+            {
+                transform.Translate(0, verticalPosition, 0); 
+            }
         }
         else 
         {
             animator.SetBool("isRunning", false);
-        }   
+        }
     }
 }

@@ -3,7 +3,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private int level = 0;
+    [SerializeField] private RestartGame restartButton;
+    public int Kills = 0;
     private int health = 0;
 
     private void Start()
@@ -25,9 +26,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void getHealPoints(int healPoints)
+    public void AddKillPoint(int points)
     {
-        if (health + healPoints >= maxHealth)
+        Kills+=points;
+    }
+
+    public void GetHealPoints(int healPoints)
+    {
+        if (health + healPoints <= maxHealth)
         {
             health += healPoints;
         }
@@ -39,7 +45,7 @@ public class Player : MonoBehaviour
 
     private void death()
     {
-
+        restartButton.EnableButton();
         Destroy(gameObject);
     }
 }

@@ -62,6 +62,14 @@ public class Enemy : MonoBehaviour
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(GetComponent<EnemyMover>());
         
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        if(player)
+        {
+            player.AddKillPoint(1);
+        }
+
+        
         gameObject.tag = "DeadEnemy";
 
         // new sprite

@@ -11,6 +11,12 @@ public class Bullet : MonoBehaviour
     {
         move();
     }
+    
+    private void FixedUpdate()
+    {
+        cheackDistance();
+    }
+
     public void SetTale(int _damage, bool flipY)
     {
         damage = _damage;
@@ -30,6 +36,14 @@ public class Bullet : MonoBehaviour
         else
         {
             transform.Translate(0, -horizontalPosition, 0);
+        }
+    }
+
+    private void cheackDistance()
+    {
+        if ((transform.position.x > 50) || (transform.position.x < -50) || (transform.position.y < -50) || (transform.position.y > 50))
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -27,11 +27,8 @@ public class PlayerMover : MonoBehaviour
     {
         vertical = fixedJoystick.Vertical;
         horizontal = fixedJoystick.Horizontal; 
-        //var verticalPosition = vertical * moveSpeed * Time.deltaTime;
-        //var horizontalPosition = horizontal * moveSpeed * Time.deltaTime;
-
-        var verticalPosition = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        var horizontalPosition = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        var verticalPosition = vertical * moveSpeed * Time.deltaTime;
+        var horizontalPosition = horizontal * moveSpeed * Time.deltaTime;
 
         if ((verticalPosition != 0) || (horizontalPosition != 0))
         {

@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float delay = 1;
     [SerializeField] private int damage = 10;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private AudioClip shotSound;
     private FixedJoystick fixedJoystick;
     private bool isShooting = false;
     private float vertical;
@@ -34,12 +35,43 @@ public class Weapon : MonoBehaviour
     }
     private void shot()
     {
+        var side = 0;
+        var sideX = 0;
+
+        if ((horizontal <= 1) && (horizontal >= 0.7) && (vertical < 0.7) && (vertical > -0.7))
+        {
+            side = 1;
+            sideX = 1;
+        }
+        else if ((horizontal >= -1) && (horizontal <= -0.7)  && (vertical < 0.7) && (vertical > -0.7))
+        {
+            side = -1;
+            sideX = 1;
+        }
+        else if ((horizontal < 0.7) && (horizontal > -0.7) && (vertical >= 0.7) && (vertical <= 1))
+        {
+            side = -1;
+        }
+        else if ((horizontal < 0.7) && (horizontal > -0.7) && (vertical <= -0.7) && (vertical >= -1))
+        {
+            side =  1;
+        }
+
+        if (side == 0)
+        {
+            return;
+        }
+        AudioSource.PlayClipAtPoint(shotSound, transform.position, 1);
+
         GameObject newbullet = Instantiate(
                 bullet,
                 transform.position,
                 new Quaternion());
 
-        newbullet.GetComponent<Bullet>().SetTale(damage, horizontal < 0);
+        newbullet.GetComponent<Bullet>().SetTale(
+            damage,
+            side,
+            sideX);
     }
 
     private void cheackShoot()

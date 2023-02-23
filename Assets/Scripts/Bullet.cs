@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     
-    private bool side = false; 
+    private int side;
     
     private int damage;
     private void Update()
@@ -17,26 +17,18 @@ public class Bullet : MonoBehaviour
         cheackDistance();
     }
 
-    public void SetTale(int _damage, bool flipY)
+    public void SetTale(int _damage, int _side, int _sideX)
     {
         damage = _damage;
-        side = flipY;
-        transform.rotation = Quaternion.Euler(0, 0, 90);
-        GetComponent<SpriteRenderer>().flipY = !flipY;
+        side = _side;
+        transform.rotation = Quaternion.Euler(0, 0, 90*_sideX);
+        GetComponent<SpriteRenderer>().flipY = side > 0;
     }
 
     private void move()
     {
-        var horizontalPosition = moveSpeed * Time.deltaTime;
-
-        if (side)
-        {
-            transform.Translate(0, horizontalPosition, 0);
-        }
-        else
-        {
-            transform.Translate(0, -horizontalPosition, 0);
-        }
+        var move = moveSpeed * Time.deltaTime;
+        transform.Translate(0, -move * side, 0);
     }
 
     private void cheackDistance()

@@ -3,10 +3,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    [SerializeField] private RestartGame restartButton;
+    [SerializeField] private AudioClip loseSound;
+    [SerializeField] private AudioClip hitSound; 
+    private RestartGame restartButton;
     public int Kills = 0;
     private int health = 0;
 
+    private void Awake()
+    {
+        restartButton = GameObject.Find("Canvas/RESTART").GetComponent<RestartGame>();
+        restartButton.EnableButton();
+    }
     private void Start()
     {
         health = maxHealth;
@@ -17,11 +24,12 @@ public class Player : MonoBehaviour
         if (health - damage > 0)
         {
             health -= damage;
-            print(health);
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1);
         }
         else
         {
             health = 0;
+            print(health);
             death();
         }
     }
@@ -45,6 +53,7 @@ public class Player : MonoBehaviour
 
     private void death()
     {
+        AudioSource.PlayClipAtPoint(loseSound, transform.position, 1);
         restartButton.EnableButton();
         Destroy(gameObject);
     }

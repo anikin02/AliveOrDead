@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private float delay = 1f;
     [SerializeField] private int attackDamage = 10;
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hitSound;
     
     [SerializeField] private GameObject[] prefabsMoney;
 
@@ -19,6 +21,8 @@ public class Enemy : MonoBehaviour
         {
             death();
         }
+
+        AudioSource.PlayClipAtPoint(hitSound, transform.position, 1);
     }
 
     private IEnumerator attack(Player player)
@@ -61,6 +65,8 @@ public class Enemy : MonoBehaviour
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(GetComponent<EnemyMover>());
+
+        AudioSource.PlayClipAtPoint(deathSound, transform.position, 1);
         
         var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 

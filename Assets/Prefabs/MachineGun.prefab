@@ -99,6 +99,7 @@ MonoBehaviour:
   delay: 0.3
   damage: 25
   bullet: {fileID: 3294588650362760067, guid: e6106b997bcc52c4db7cfe497539dbc0, type: 3}
+  shotSound: {fileID: 8300000, guid: 6f0c572d865b4664db7a460972bc4768, type: 3}
 --- !u!114 &5614023191873811734
 MonoBehaviour:
   m_ObjectHideFlags: 0

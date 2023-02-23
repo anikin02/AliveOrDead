@@ -21,6 +21,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManager
     - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -33,8 +34,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -70,6 +73,8 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -432,7 +437,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: b69924ca0c5b20b98d7d329c8273d0be
+      Hash: 34d92ca3682e7b4318c43885db13f2a0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -588,7 +593,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: ba391f253e68e5b11053b3cdef119073
+      Hash: fd3ff48d87db23a95d36f83e5ef4cfad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AidKit
@@ -720,7 +725,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 81f4c0a9674b90fcb2df10ee1c0bc87c
+      Hash: 75e74718ff7fcc935fac8153ae892f55
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Weapon
@@ -732,7 +737,7 @@ ScriptsOnlyBuild:
     className: BufferManager
   - hash:
       serializedVersion: 2
-      Hash: b953d3e6f948296273d660143ee28b7a
+      Hash: 296e0ec2e4200dd0a1d43083d8390fce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -768,7 +773,7 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 03bec799ceaa373ce0ffd93ba78fe379
+      Hash: 81cb63681d063c6325e37fc1538a08b1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemySpawner

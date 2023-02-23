@@ -11,8 +11,12 @@ public class EnemyMover : MonoBehaviour
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        playerTransform = 
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if(player)
+        {
+            playerTransform = 
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
     }
 
     void Update()

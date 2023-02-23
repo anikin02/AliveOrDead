@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class RestartGame : MonoBehaviour
 {
+    private bool isEnabled = true;
+
     private void Start()
     {
         GetComponent<Button>().onClick.AddListener(changeScene);
@@ -16,6 +18,7 @@ public class RestartGame : MonoBehaviour
 
     public void EnableButton()
     {
-        gameObject.SetActive(true);
+        isEnabled = !isEnabled;
+        gameObject.SetActive(isEnabled);
     }
 }

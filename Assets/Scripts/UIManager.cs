@@ -4,7 +4,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text kills;
-    [SerializeField] private Text enemies;
+    [SerializeField] private Text wave;
+    [SerializeField] private EnemySpawner spawner;
 
     private GameObject player;
 
@@ -23,7 +24,12 @@ public class UIManager : MonoBehaviour
         if (player)
         {
             kills.text = player.GetComponent<Player>().Kills.ToString();
-            enemies.text = GameObject.FindGameObjectsWithTag("Enemy").Length.ToString();
+            wave.text = spawner.Wave.ToString();
+        }
+        else
+        {
+            kills.text = "0";
+            wave.text = "0";
         }
     }
 }

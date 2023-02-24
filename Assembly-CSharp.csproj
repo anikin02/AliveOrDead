@@ -45,6 +45,7 @@
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\NextScene.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Scripts\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\AidKit.cs" />
@@ -56,7 +57,9 @@
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\ObjectRotation.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\NextScene.cs" />
+     <Compile Include="Assets\Scripts\ChoicePlayer.cs" />
+     <Compile Include="Assets\Scripts\SpawnPlayer.cs" />
+     <Compile Include="Assets\Scripts\SavePlayerNumber.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.29f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

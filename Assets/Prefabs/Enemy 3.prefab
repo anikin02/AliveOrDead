@@ -168,6 +168,7 @@ MonoBehaviour:
   health: 100
   delay: 2
   attackDamage: 6
+  deadSptite: {fileID: -506247392341070165, guid: 3bcb7877229a5334da528f2f0872b5c3, type: 3}
   deathSound: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
   hitSound: {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
   prefabsMoney: []

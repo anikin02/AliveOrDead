@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private RestartGame restartButton;
     public int Kills = 0;
     private int health = 0;
+    private Animator animator;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     public void GetDamage(int damage)
@@ -53,8 +55,11 @@ public class Player : MonoBehaviour
 
     private void death()
     {
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isDying", true);
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<BoxCollider2D>());
         AudioSource.PlayClipAtPoint(loseSound, transform.position, 1);
         restartButton.EnableButton();
-        Destroy(gameObject);
     }
 }

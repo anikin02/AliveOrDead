@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private float delay = 1f;
     [SerializeField] private int attackDamage = 10;
+    [SerializeField] private Sprite deadSptite;
     [SerializeField] private AudioClip deathSound;
     [SerializeField] private AudioClip hitSound;
     
@@ -65,6 +66,7 @@ public class Enemy : MonoBehaviour
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(GetComponent<EnemyMover>());
+        Destroy(GetComponent<Animator>());
 
         AudioSource.PlayClipAtPoint(deathSound, transform.position, 1);
         
@@ -74,12 +76,8 @@ public class Enemy : MonoBehaviour
         {
             player.AddKillPoint(1);
         }
-
-        
+        GetComponent<SpriteRenderer>().sortingOrder = 5;
+        GetComponent<SpriteRenderer>().sprite = deadSptite;
         gameObject.tag = "DeadEnemy";
-
-        // new sprite
-
-
     }
 }

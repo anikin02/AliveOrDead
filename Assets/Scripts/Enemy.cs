@@ -26,6 +26,21 @@ public class Enemy : MonoBehaviour
         AudioSource.PlayClipAtPoint(hitSound, transform.position, 1);
     }
 
+    private void dropMoney()
+    {
+        var maxCounter = Random.Range(1, 5);
+        for (int i = 0; i < maxCounter; i++)
+        {
+            Vector2 position = new Vector2(transform.position.x + Random.Range(-0.3f, 0.3f),
+                transform.position.y + Random.Range(-0.3f, 0.3f));
+
+            GameObject newGameObject = Instantiate(
+                prefabsMoney[Random.Range(0, prefabsMoney.Length)],
+                position,
+                new Quaternion());
+        }
+    }
+
     private IEnumerator attack(Player player)
     {
         while(true)
@@ -67,6 +82,7 @@ public class Enemy : MonoBehaviour
         Destroy(GetComponent<BoxCollider2D>());
         Destroy(GetComponent<EnemyMover>());
         Destroy(GetComponent<Animator>());
+        dropMoney();
 
         AudioSource.PlayClipAtPoint(deathSound, transform.position, 1);
         

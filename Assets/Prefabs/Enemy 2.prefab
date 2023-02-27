@@ -171,7 +171,10 @@ MonoBehaviour:
   deadSptite: {fileID: -506247392341070165, guid: 4104ee12b4d54f54b91b3ba875787837, type: 3}
   deathSound: {fileID: 8300000, guid: 291608b8d286e2a4580ff36324455ce2, type: 3}
   hitSound: {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
-  prefabsMoney: []
+  prefabsMoney:
+  - {fileID: 7042857503656359908, guid: 799f6eaed708c5f40a1e1aa66cee6e01, type: 3}
+  - {fileID: 7688965901014407958, guid: 0bb6702e947734140943c3e65942485f, type: 3}
+  - {fileID: 7576984161436474834, guid: 255a04cf7953b174db6f50d5dd431c38, type: 3}
 --- !u!114 &5729628587516366527
 MonoBehaviour:
   m_ObjectHideFlags: 0

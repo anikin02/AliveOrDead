@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip hitSound; 
     private RestartGame restartButton;
     public int Kills = 0;
+    public int Money = 0;
     private int health = 0;
     private Animator animator;
 

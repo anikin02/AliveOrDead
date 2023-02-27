@@ -26173,7 +26173,7 @@ MonoBehaviour:
   - {fileID: 8391238877144640408, guid: 354842e124a775342a7c6fd667d465f8, type: 3}
   - {fileID: 3578670080012740607, guid: 6f898adf9b8a39a4b830a729a98314d7, type: 3}
   - {fileID: 7882130651650853692, guid: 77c253cbbbe3e3e4c8720296c235da60, type: 3}
-  - {fileID: 0}
+  - {fileID: 6831034534552413525, guid: 57442b16ff144974187e2e034731a2a0, type: 3}
 --- !u!224 &1630223772 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -26485,4 +26485,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff6652f488faf742b7457ecd67cd144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameScene: PlayScene-3
+  nameScene: PlayScene

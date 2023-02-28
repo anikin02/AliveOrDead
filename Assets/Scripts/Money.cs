@@ -11,9 +11,9 @@ public class Money : MonoBehaviour
         Destroy(gameObject);
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggernEnter2D(Collider2D collider)
     {
-        Player player = collision.gameObject.GetComponent<Player>();
+        Player player = collider.gameObject.GetComponent<Player>();
 
         if (player)
         {

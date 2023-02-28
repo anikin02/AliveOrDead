@@ -14,3 +14,6 @@ The game was implemented in Unity using C#. It's just a clone of the Flappy bird
 9. ADS
 10. Money
 11. Shop hero + FAK
+
+To Do
+1. Fixed MONEY

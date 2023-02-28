@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7882130651650853688}
   - component: {fileID: 7882130651650853689}
   - component: {fileID: 3300919225907352011}
-  - component: {fileID: -3556915804222120993}
   - component: {fileID: 8977567747492462233}
   m_Layer: 0
   m_Name: Player 3
@@ -163,27 +162,7 @@ MonoBehaviour:
   loseSound: {fileID: 8300000, guid: c8a3fe17a6641ec48b38fb455a40a223, type: 3}
   hitSound: {fileID: 8300000, guid: 6b7eaf4532a2f614595ad58d2b86efc4, type: 3}
   Kills: 0
---- !u!50 &-3556915804222120993
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7882130651650853692}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
+  Money: 0
 --- !u!114 &8977567747492462233
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class SaveGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private string path;
+    private Save save;
+
+    private void Start()
     {
-        
+        save = new Save();
+        path = Path.Combine(Application.persistentDataPath, "SaveGame.json");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void saveRecord()
     {
-        
+        save.CounterAidKit = DataHolder.CounterAidKit;
+        save.Money = DataHolder.Money;
+        save.players = DataHolder.players;
+        save.Wave = DataHolder.Wave;
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            saveRecord();
+            File.WriteAllText(path, JsonUtility.ToJson(save));
+        }   
     }
 }

@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+     <Compile Include="Assets\Scripts\Save.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
      <Compile Include="Assets\Scripts\SpawnPlayer.cs" />
@@ -50,22 +51,24 @@
      <Compile Include="Assets\Scripts\NextScene.cs" />
      <Compile Include="Assets\Scripts\Money.cs" />
      <Compile Include="Assets\Scripts\ChoicePlayer.cs" />
+     <Compile Include="Assets\Scripts\SaveGame.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Scripts\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\AidKit.cs" />
      <Compile Include="Assets\Scripts\RestartGame.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
      <Compile Include="Assets\Scripts\SavePlayerNumber.cs" />
+     <Compile Include="Assets\Scripts\BuyNewCharacter.cs" />
      <Compile Include="Assets\Scripts\ItemsSpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerMover.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\LoadGame.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\ObjectRotation.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\BuyNewCharacter.cs" />
-     <Compile Include="Assets\Scripts\LoadGame.cs" />
-     <Compile Include="Assets\Scripts\SaveGame.cs" />
-     <Compile Include="Assets\Scripts\Save.cs" />
+     <Compile Include="Assets\Scripts\UIMangerMenu.cs" />
+     <Compile Include="Assets\Scripts\UIManagerShop.cs" />
+     <Compile Include="Assets\Scripts\OpenCloseShop.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.29f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

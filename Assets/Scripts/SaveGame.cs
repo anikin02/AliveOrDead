@@ -8,6 +8,7 @@ public class SaveGame : MonoBehaviour
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         save = new Save();
         path = Path.Combine(Application.persistentDataPath, "SaveGame.json");
     }

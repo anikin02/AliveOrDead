@@ -3,6 +3,7 @@ using UnityEngine;
 public class Money : MonoBehaviour
 {
     [SerializeField] private int volume = 1;
+    [SerializeField] private AudioClip takeSound;
 
     private void getMoney(Player player)
     {
@@ -11,12 +12,13 @@ public class Money : MonoBehaviour
         Destroy(gameObject);
     }
     
-    private void OnTriggernEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         Player player = collider.gameObject.GetComponent<Player>();
 
         if (player)
         {
+            AudioSource.PlayClipAtPoint(takeSound, transform.position, 5);
             getMoney(player);
         }
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3878067033352860174}
   - component: {fileID: 7726918805630940779}
   - component: {fileID: 4704153625357659881}
+  - component: {fileID: -8481409880907199632}
   m_Layer: 0
   m_Name: Money5
   m_TagString: Untagged
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volume: 5
+  takeSound: {fileID: 8300000, guid: 4b294d59d2399014daa718b35c9de73b, type: 3}
 --- !u!61 &4704153625357659881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,7 +112,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0010576248, y: 0.02539134}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -121,5 +123,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5555556, y: 0.6111111}
+  m_Size: {x: 0.43917847, y: 0.45876312}
   m_EdgeRadius: 0
+--- !u!50 &-8481409880907199632
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7576984161436474834}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

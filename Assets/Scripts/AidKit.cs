@@ -5,9 +5,9 @@ public class AidKit : MonoBehaviour
     [SerializeField] private int healthPoints = 50;
     [SerializeField] private AudioClip takeSound;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {   
-        Player player = collision.gameObject.GetComponent<Player>();
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Player player = collider.gameObject.GetComponent<Player>();
 
         if (player)
         {

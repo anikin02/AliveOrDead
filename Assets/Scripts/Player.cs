@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private RestartGame restartButton;
     public int Kills = 0;
     public int Money = 0;
-    private int health = 0;
+    public int Health = 0;
     private Animator animator;
 
     private void Awake()
@@ -18,21 +18,21 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
-        health = maxHealth;
+        Health = maxHealth;
         animator = GetComponent<Animator>();
     }
 
     public void GetDamage(int damage)
     {
-        if (health - damage > 0)
+        if (Health - damage > 0)
         {
-            health -= damage;
+            Health -= damage;
             AudioSource.PlayClipAtPoint(hitSound, transform.position, 1);
         }
         else
         {
-            health = 0;
-            print(health);
+            Health = 0;
+            print(Health);
             death();
         }
     }
@@ -44,13 +44,13 @@ public class Player : MonoBehaviour
 
     public void GetHealPoints(int healPoints)
     {
-        if (health + healPoints <= maxHealth)
+        if (Health + healPoints <= maxHealth)
         {
-            health += healPoints;
+            Health += healPoints;
         }
         else
         {
-            health = maxHealth;
+            Health = maxHealth;
         }
     }
 
